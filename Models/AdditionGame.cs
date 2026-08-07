@@ -1,11 +1,12 @@
-﻿using MathGameRecap.Interfaces;
+﻿using MathGameRecap;
+using MathGameRecap.Interfaces;
 using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using static MathGameRecap.Enums;
 namespace MathGameRecap.Models
 {
     internal class AdditionGame : BaseGame, IGame
@@ -19,17 +20,22 @@ namespace MathGameRecap.Models
             {
                 AnsiConsole.MarkupLine(Helpers.RoundHeader("Addition Game", i + 1));
 
-                (firstNumber, secondNumber) = GenerateTwoNumbers(1, 100);
+                (firstNumber, secondNumber) = Helpers.GenerateTwoNumbers(1, 100);
 
                 int result = firstNumber + secondNumber;
                 int userResult = AnsiConsole.Ask<int>($"[blue]{firstNumber}[/] [cyan]+[/] [blue]{secondNumber}[/] [cyan]=[/] ");
 
-                if (IsResultCorrect(userResult, result)) score++;
+                if (Helpers.IsResultCorrect(userResult, result)) score++;
 
                 Helpers.Intermission();
             }
             Helpers.EndGameMessage(score);
-            
+            MockDatabase.AddGame(
+                id: MockDatabase.GetNextId(),
+                score: score,
+                operation: GameType.Add
+                );
+
         }
     }
 }

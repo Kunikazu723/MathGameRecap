@@ -4,22 +4,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MathGameRecap.Enums;
 
 namespace MathGameRecap
 {
     internal class MockDatabase
     {
         public static List<GameData> Database { get; private set; } = new();
-        public static int LastId { get; private set; } = 0;
-        public static void AddGame(GameData game)
+        private static int LastId { get; set; } = 0;
+        public static void AddGame(int id, int score, GameType operation)
         {
-            if (Database.Any(x => x.Id == game.Id))
+            if (Database.Any(gameData => gameData.Id == id))
             {
                 throw new ArgumentException();
             }
 
-            Database.Add(game);
-            LastId = game.Id;
+            var date = DateTime.Now;
+
+            Database.Add(
+                new GameData(
+                    id: id,
+                    score: score,
+                    date: date,
+                    operation: operation
+                    )
+                );
+
+            
+            LastId = id;
+        }
+
+        public static int GetNextId() => LastId + 1;
+
+        public static void ViewHistory()
+        {
+            foreach ( var gameData in Database)
+            {
+                Console.WriteLine(gameData.ToString());
+            }
+            Helpers.Intermission();
         }
     }
 }
