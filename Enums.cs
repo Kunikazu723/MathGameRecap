@@ -13,7 +13,14 @@ namespace MathGameRecap
             Add,
             Subtract,
             Multiply,
-            Divide
+            Divide,
+            MainMenu
+        }
+
+        public enum MenuChoice
+        {
+            Play,
+            History
         }
     }
 }
