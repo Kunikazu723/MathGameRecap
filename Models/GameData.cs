@@ -8,10 +8,10 @@ namespace MathGameRecap.Models
 {
     public class GameData
     {
-        public int Id { get; }
-        public int Score { get; }
-        public DateTime Date { get; }
-        public GameType Operation { get; }
+        public int Id { get; init; }
+        public int Score { get; init; }
+        public DateTime Date { get; init; }
+        public GameType Operation { get; init; }
         
         public GameData(int id, int score, DateTime date, GameType operation)
         {
