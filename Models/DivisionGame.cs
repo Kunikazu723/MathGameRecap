@@ -1,4 +1,6 @@
-﻿namespace MathGameRecap.Models
+﻿using System.CodeDom.Compiler;
+
+namespace MathGameRecap.Models
 {
     internal class DivisionGame : BaseGame
     {
