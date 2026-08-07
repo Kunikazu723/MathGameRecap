@@ -22,5 +22,15 @@ namespace MathGameRecap
             Play,
             History
         }
+
+        public static char GameTypeToSymbol(GameType type) => type switch 
+        {
+            GameType.Add => '+',
+            GameType.Subtract => '-',
+            GameType.Multiply => '*',
+            GameType.Divide => '/',
+            _ => throw new NotImplementedException()
+
+        };
     }
 }
