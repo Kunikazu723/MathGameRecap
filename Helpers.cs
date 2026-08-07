@@ -37,7 +37,7 @@ namespace MathGameRecap
                 return true;
             }
 
-            AnsiConsole.MarkupLine($"\n[bold red]NO!![/] [red]{userResult} is inccorrect!!![/]");
+            AnsiConsole.MarkupLine($"\n[bold red]NO!![/] [red]{userResult} is inccorrect!!![/]\n[bold yellow]The answer is {result}[/]");
             return false;
         }
     }
