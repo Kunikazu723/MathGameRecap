@@ -9,16 +9,17 @@ namespace MathGameRecap
 {
     internal class MockDatabase
     {
-        public static List<Game> Database { get; private set; } = new();
-
-        public void AddGame(Game game)
+        public static List<GameData> Database { get; private set; } = new();
+        public static int LastId { get; private set; } = 0;
+        public static void AddGame(GameData game)
         {
             if (Database.Any(x => x.Id == game.Id))
             {
-                throw new IndexOutOfRangeException();
+                throw new ArgumentException();
             }
 
             Database.Add(game);
+            LastId = game.Id;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace MathGameRecap
 {
     public class Enums
     {
-        public enum MathOperation
+        public enum GameType
         {
             Add,
             Subtract,

@@ -7,7 +7,8 @@ namespace MathGameRecap
     {
         static void Main(string[] args)
         {
-            var userInterface = new UserInterface();
+            var gameEngine = new GameEngine();
+            var userInterface = new UserInterface(gameEngine);
             userInterface.MainMenu();
             //Requirements
 

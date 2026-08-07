@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using static MathGameRecap.Enums;
 namespace MathGameRecap.Models
 {
-    public class Game
+    public class GameData
     {
         public int Id { get; }
         public int Score { get; }
         public DateTime Date { get; }
-        public MathOperation Operation { get; }
+        public GameType Operation { get; }
         
-        public Game(int id, int score, DateTime date, MathOperation operation)
+        public GameData(int id, int score, DateTime date, GameType operation)
         {
             Id = id;
             Score = score;
