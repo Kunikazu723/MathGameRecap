@@ -24,6 +24,11 @@ namespace MathGameRecap
             Exit
         }
 
+        public enum Difficulty
+        {
+            Easy,
+        }
+
         public static char GameTypeToSymbol(GameType type) => type switch 
         {
             GameType.Add => '+',
