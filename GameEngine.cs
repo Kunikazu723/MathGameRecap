@@ -12,7 +12,7 @@ namespace MathGameRecap
     {
 
         private readonly Random random = new();
-        private readonly Dictionary<GameType, IGame> gameRunner = new()
+        private readonly Dictionary<GameType, BaseGame> gameRunner = new()
         {
             [GameType.Add] = new AdditionGame(),
             [GameType.Subtract] = new SubtractionGame(),
