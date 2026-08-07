@@ -20,7 +20,7 @@ namespace MathGameRecap
         public enum MenuChoice
         {
             Play,
-            History
+            History,
         }
 
         public static char GameTypeToSymbol(GameType type) => type switch 
