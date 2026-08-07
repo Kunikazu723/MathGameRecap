@@ -1,10 +1,4 @@
 ﻿using Spectre.Console;
-using System;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static MathGameRecap.Enums;
 
 namespace MathGameRecap.Models
@@ -16,7 +10,7 @@ namespace MathGameRecap.Models
         protected abstract GameType Type { get; }
 
         protected abstract int PerformOperation(int a, int b);
-        //protected abstract (int, int) GenerateOperands();
+        protected abstract (int, int) GenerateOperands();
 
 
         public void RunGame()
@@ -28,7 +22,7 @@ namespace MathGameRecap.Models
             {
                 AnsiConsole.MarkupLine(Helpers.RoundHeader("Addition Game", i + 1));
 
-                (firstNumber, secondNumber) = Helpers.GenerateTwoNumbers(1, 100);
+                (firstNumber, secondNumber) = GenerateOperands();
 
                 int result = PerformOperation(firstNumber, secondNumber);
                 int userResult = AnsiConsole.Ask<int>($"[blue]{firstNumber}[/] [cyan]{Enums.GameTypeToSymbol(Type)}[/] [blue]{secondNumber}[/] [cyan]=[/] ");
