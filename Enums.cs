@@ -21,6 +21,7 @@ namespace MathGameRecap
         {
             Play,
             History,
+            Exit
         }
 
         public static char GameTypeToSymbol(GameType type) => type switch 
