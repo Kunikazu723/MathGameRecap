@@ -9,7 +9,7 @@ using static MathGameRecap.Enums;
 
 namespace MathGameRecap.Models
 {
-    internal class SubtractionGame : BaseGame, IGame
+    internal class SubtractionGame : BaseGame
     {
         protected override GameType Type => GameType.Subtract;
 

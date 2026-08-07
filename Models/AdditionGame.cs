@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using static MathGameRecap.Enums;
 namespace MathGameRecap.Models
 {
-    internal class AdditionGame : BaseGame, IGame
+    internal class AdditionGame : BaseGame
     {
         protected override GameType Type { get; } = GameType.Add;
         protected override int PerformOperation(int a, int b) => a + b;

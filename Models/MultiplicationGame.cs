@@ -1,13 +1,6 @@
-﻿using MathGameRecap.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MathGameRecap.Models
+﻿namespace MathGameRecap.Models
 {
-    internal class MultiplicationGame : BaseGame, IGame
+    internal class MultiplicationGame : BaseGame
     {
         protected override Enums.GameType Type => Enums.GameType.Multiply;
 
