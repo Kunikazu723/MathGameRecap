@@ -10,7 +10,7 @@ namespace MathGameRecap
 {
     internal static class Helpers
     {
-        private static readonly Random _rng = new Random();
+        public static Random Rng { get; } = new Random();
         public static void Intermission(bool clearConsole = true)
         {
             AnsiConsole.MarkupLine("Press [blue]Any Key[/] to [green]Continue[/]");
@@ -28,7 +28,7 @@ namespace MathGameRecap
             Intermission();
         }
 
-        public static (int, int) GenerateTwoNumbers(int lowerBound, int upperBound) => (_rng.Next(lowerBound, upperBound), _rng.Next(lowerBound, upperBound));
+        public static (int, int) GenerateTwoNumbers(int lowerBound, int upperBound) => (Rng.Next(lowerBound, upperBound), Rng.Next(lowerBound, upperBound));
         public static bool IsResultCorrect(int userResult, int result)
         {
             if (userResult == result)
