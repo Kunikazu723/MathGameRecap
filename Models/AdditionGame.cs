@@ -13,6 +13,6 @@ namespace MathGameRecap.Models
     {
         protected override GameType Type { get; } = GameType.Add;
         protected override int PerformOperation(int a, int b) => a + b;
-
+        
     }
 }
