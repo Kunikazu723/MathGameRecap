@@ -11,31 +11,8 @@ namespace MathGameRecap.Models
 {
     internal class AdditionGame : BaseGame, IGame
     {
-        public void RunGame()
-        {
-            int score = 0;
-            int firstNumber;
-            int secondNumber;
-            for (int i = 0; i < Rounds; i++) 
-            {
-                AnsiConsole.MarkupLine(Helpers.RoundHeader("Addition Game", i + 1));
+        protected override GameType Type { get; } = GameType.Add;
+        protected override int PerformOperation(int a, int b) => a + b;
 
-                (firstNumber, secondNumber) = Helpers.GenerateTwoNumbers(1, 100);
-
-                int result = firstNumber + secondNumber;
-                int userResult = AnsiConsole.Ask<int>($"[blue]{firstNumber}[/] [cyan]+[/] [blue]{secondNumber}[/] [cyan]=[/] ");
-
-                if (Helpers.IsResultCorrect(userResult, result)) score++;
-
-                Helpers.Intermission();
-            }
-            Helpers.EndGameMessage(score);
-            MockDatabase.AddGame(
-                id: MockDatabase.GetNextId(),
-                score: score,
-                operation: GameType.Add
-                );
-
-        }
     }
 }
