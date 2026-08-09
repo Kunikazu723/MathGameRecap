@@ -11,14 +11,14 @@ namespace MathGameRecap.Models
         public int Id { get; init; }
         public int Score { get; init; }
         public DateTime Date { get; init; }
-        public GameType Operation { get; init; }
+        public GameType Type { get; init; }
         
         public GameData(int id, int score, DateTime date, GameType operation)
         {
             Id = id;
             Score = score;
             Date = date;
-            Operation = operation;
+            Type = operation;
         }
 
     }
