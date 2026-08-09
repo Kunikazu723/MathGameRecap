@@ -19,7 +19,7 @@ namespace MathGameRecap
         public void MainMenu()
         {
             
-
+            // Could make a while true here instead of do while...
             bool isAppRunning = true;
             do
             {
