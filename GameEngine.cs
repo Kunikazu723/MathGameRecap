@@ -17,7 +17,8 @@ namespace MathGameRecap
 
         public void RunGame(GameType operation)
         {
-            gameRunner[operation].RunGame();
+            var game = gameRunner[operation].RunGame();
+            MockDatabase.AddGame(game);
         }
 
 

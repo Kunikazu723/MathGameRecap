@@ -13,26 +13,19 @@ namespace MathGameRecap
     {
         public static List<GameData> Database { get; private set; } = new();
         private static int LastId { get; set; } = 0;
-        public static void AddGame(int id, int score, GameType operation)
+        public static void AddGame(GameData game)
         {
-            if (Database.Any(gameData => gameData.Id == id))
+            if (Database.Any(gameData => gameData.Id == game.Id))
             {
                 throw new ArgumentException();
             }
 
             var date = DateTime.Now;
 
-            Database.Add(
-                new GameData(
-                    id: id,
-                    score: score,
-                    date: date,
-                    operation: operation
-                    )
-                );
+            Database.Add(game);
 
-            
-            LastId = id;
+
+            LastId = game.Id;
         }
 
         public static int GetNextId() => LastId + 1;
