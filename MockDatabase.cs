@@ -1,4 +1,5 @@
 ﻿using MathGameRecap.Models;
+using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,12 +37,26 @@ namespace MathGameRecap
 
         public static int GetNextId() => LastId + 1;
 
-        public static void ViewHistory()
+        public static void ViewGamesHistory()
         {
+            var table = new Table();
+            table.AddColumns(new string[] { 
+                "Id", "Type", "Date", "Score"
+            });
+
             foreach ( var gameData in Database)
             {
-                Console.WriteLine(gameData.ToString());
+                var id = gameData.Id.ToString();
+                var type = gameData.Type.ToString();
+                var date = gameData.Date.ToString();
+                var score = gameData.Score.ToString();
+
+                table.AddRow(new string[] { 
+                    id, type, date, score
+                });
             }
+
+            AnsiConsole.Write(table);
             Helpers.Intermission();
         }
     }
