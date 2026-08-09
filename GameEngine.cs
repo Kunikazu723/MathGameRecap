@@ -12,6 +12,7 @@ namespace MathGameRecap
             [GameType.Subtract] = new SubtractionGame(),
             [GameType.Multiply] = new MultiplicationGame(),
             [GameType.Divide] = new DivisionGame(),
+            [GameType.Random] = new RandomGame()
         };
 
         public void RunGame(GameType operation)

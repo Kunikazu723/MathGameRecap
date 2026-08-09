@@ -14,6 +14,7 @@ namespace MathGameRecap
             Subtract,
             Multiply,
             Divide,
+            Random,
             MainMenu
         }
 

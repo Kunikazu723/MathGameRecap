@@ -4,9 +4,9 @@ namespace MathGameRecap.Models
 {
     internal class DivisionGame : BaseGame
     {
-        protected override Enums.GameType Type => Enums.GameType.Divide;
+        internal override Enums.GameType Type => Enums.GameType.Divide;
 
-        protected override (int, int) GenerateOperands()
+        internal override (int, int) GenerateOperands()
         {
             int a = Helpers.Rng.Next(0, 100);
             int b = GenerateDenominator(a);
@@ -14,7 +14,7 @@ namespace MathGameRecap.Models
             return (a, b);
         }
 
-        protected override int PerformOperation(int a, int b) => a / b;
+        internal override int PerformOperation(int a, int b) => a / b;
 
         private int GenerateDenominator(int a)
         {
