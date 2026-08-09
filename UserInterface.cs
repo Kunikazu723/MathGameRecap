@@ -35,7 +35,7 @@ namespace MathGameRecap
                         GamesMenu();
                         break;
                     case MenuChoice.History:
-                        MockDatabase.ViewHistory();
+                        MockDatabase.ViewGamesHistory();
                         break;
                     case MenuChoice.Exit:
                         return;
