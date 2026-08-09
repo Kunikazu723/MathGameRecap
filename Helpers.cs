@@ -11,8 +11,14 @@ namespace MathGameRecap
     internal static class Helpers
     {
         public static Random Rng { get; } = new Random();
+
+        /// <summary>
+        /// Prompts user to press Any Key.
+        /// </summary>
+        /// <param name="clearConsole">If true, console will be cleansed. Default true.</param>
         public static void Intermission(bool clearConsole = true)
         {
+            // Prompts user to press Any Key
             AnsiConsole.MarkupLine("Press [blue]Any Key[/] to [green]Continue[/]");
             Console.ReadKey();
             if (clearConsole) Console.Clear();
