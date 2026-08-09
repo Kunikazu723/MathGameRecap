@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace MathGameRecap
 {
     internal static class Helpers
     {
-        public static Random Rng { get; } = new Random();
+        public static Random Rng { get; } = new();
 
         /// <summary>
         /// Prompts user to press Any Key.

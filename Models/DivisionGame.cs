@@ -1,17 +1,44 @@
 ﻿using System.CodeDom.Compiler;
-
+using static MathGameRecap.Enums;
+using static MathGameRecap.Helpers;
 namespace MathGameRecap.Models
 {
     internal class DivisionGame : BaseGame
     {
         internal override Enums.GameType Type => Enums.GameType.Divide;
 
-        internal override (int, int) GenerateOperands()
+        internal override (int, int) GenerateOperands(Difficulty difficulty)
         {
-            int a = Helpers.Rng.Next(0, 100);
-            int b = GenerateDenominator(a);
+            // Easy - single digit numbers
+            // Medium - doulbe digit nominator single digit denominator
+            // Hard - double digit division
 
-            return (a, b);
+            int futureAnswer = Rng.Next(0, 100);
+            int denominatorMultiple = Rng.Next(1, 100);
+
+            //int a;
+            //int b;
+
+            switch (difficulty)
+            {
+                case Difficulty.Easy:
+                    futureAnswer = Rng.Next(0, 5);
+                    denominatorMultiple = Rng.Next(1, 10);
+                    break;
+                case Difficulty.Medium:
+                    futureAnswer = Rng.Next(0, 10);
+                    denominatorMultiple = Rng.Next(1, 10);
+                    break;
+                case Difficulty.Hard:
+                    futureAnswer = Rng.Next(1, 50);
+                    denominatorMultiple = Rng.Next(1, 100);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            int nominator = futureAnswer * denominatorMultiple;
+
+            return (nominator, denominatorMultiple);
         }
 
         internal override int PerformOperation(int a, int b) => a / b;

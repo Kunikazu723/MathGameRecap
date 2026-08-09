@@ -52,13 +52,18 @@ namespace MathGameRecap
             {
                 var operatoinChoice = AnsiConsole.Prompt(
                     new SelectionPrompt<GameType>()
-                        .Title("Select the game [blue]Type / Operation[/]:")
+                        .Title("Select the game [bold blue]Type / Operation[/]:")
                         .AddChoices(Enum.GetValues<GameType>())
                     );
 
                 if (operatoinChoice == GameType.MainMenu) return;
 
-                _engine.RunGame(operatoinChoice);
+                var difficultyChoice = AnsiConsole.Prompt(
+                    new SelectionPrompt<Difficulty>()
+                        .Title("Select the game [bold red]Difficulty[/]:")
+                        .AddChoices(Enum.GetValues<Difficulty>())
+                    );
+                _engine.RunGame(operatoinChoice, difficultyChoice);
             }
         }
     }

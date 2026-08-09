@@ -20,10 +20,10 @@ namespace MathGameRecap.Models
 
         internal override GameType Type => Game?.Type ?? GameType.Random;
 
-        internal override (int, int) GenerateOperands()
+        internal override (int, int) GenerateOperands(Difficulty difficulty)
         {
             Game = ChooseRandomGame();
-            return Game.GenerateOperands();
+            return Game.GenerateOperands(difficulty);
         }
 
         internal override int PerformOperation(int a, int b)

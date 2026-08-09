@@ -5,10 +5,27 @@ namespace MathGameRecap.Models
     {
         internal override GameType Type { get; } = GameType.Add;
 
-        internal override (int, int) GenerateOperands()
+        internal override (int, int) GenerateOperands(Difficulty difficulty)
         {
-            int a = Helpers.Rng.Next(1, 100);
-            int b = Helpers.Rng.Next(1, 100);
+            int a;
+            int b;
+            switch (difficulty)
+            {
+                case Difficulty.Easy:
+                    a = Helpers.Rng.Next(1, 10);
+                    b = Helpers.Rng.Next(1, 10);
+                    break;
+                case Difficulty.Medium:
+                    a = Helpers.Rng.Next(10, 101);
+                    b = Helpers.Rng.Next(1, 10);
+                    break;
+                case Difficulty.Hard:
+                    a = Helpers.Rng.Next(1, 100);
+                    b = Helpers.Rng.Next(1, 100);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
             return (a, b);
         }
 

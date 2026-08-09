@@ -15,9 +15,9 @@ namespace MathGameRecap
             [GameType.Random] = new RandomGame()
         };
 
-        public void RunGame(GameType operation)
+        public void RunGame(GameType operation, Difficulty difficulty)
         {
-            var game = gameRunner[operation].RunGame();
+            var game = gameRunner[operation].RunGame(difficulty);
             MockDatabase.AddGame(game);
         }
 

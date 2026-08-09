@@ -28,6 +28,8 @@ namespace MathGameRecap
         public enum Difficulty
         {
             Easy,
+            Medium,
+            Hard
         }
 
         public static char GameTypeToSymbol(GameType type) => type switch 

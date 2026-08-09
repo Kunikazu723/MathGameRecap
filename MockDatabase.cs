@@ -24,7 +24,6 @@ namespace MathGameRecap
 
             Database.Add(game);
 
-
             LastId = game.Id;
         }
 
@@ -33,19 +32,20 @@ namespace MathGameRecap
         public static void ViewGamesHistory()
         {
             var table = new Table();
-            table.AddColumns(new string[] { 
-                "Id", "Type", "Date", "Score"
+            table.AddColumns(new string[] {
+                "Id", "Type", "Date", "Score", "Duration(sec)", "Difficulty"
             });
 
-            foreach ( var gameData in Database)
+            foreach (var gameData in Database)
             {
                 var id = gameData.Id.ToString();
                 var type = gameData.Type.ToString();
                 var date = gameData.Date.ToString();
                 var score = gameData.Score.ToString();
-
-                table.AddRow(new string[] { 
-                    id, type, date, score
+                var duration = gameData.Duration.TotalSeconds.ToString();
+                
+                table.AddRow(new string[] {
+                    id, type, date, score, duration, gameData.Difficulty.ToString()
                 });
             }
 
