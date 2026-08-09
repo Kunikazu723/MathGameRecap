@@ -18,6 +18,11 @@ namespace MathGameRecap.Models
 
         private int GenerateDenominator(int a)
         {
+            if (a == 0)
+            {
+                return 1;
+            }
+
             var availableDenominators = new List<int>();
             for (int i = 1; i <= a; i++) 
             {
