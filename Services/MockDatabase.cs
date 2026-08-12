@@ -38,9 +38,9 @@ namespace MathGameRecap.Services
                 "Id", "Type", "Date", "Score", "Duration(sec)", "Difficulty"
             });
 
-            var yesterday = DateTime.Now - TimeSpan.FromDays(1); 
+            DateTime yesterday = DateTime.Now - TimeSpan.FromDays(1); 
 
-            foreach (var gameData in Database.Where(game => game.Date >= yesterday))
+            foreach (GameData gameData in Database.Where(game => game.Date >= yesterday))
             {
                 var id = gameData.Id.ToString();
                 var type = gameData.Type.ToString();
