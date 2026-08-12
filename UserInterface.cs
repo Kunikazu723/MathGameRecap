@@ -29,6 +29,9 @@ namespace MathGameRecap
                         .Title("What would you like to do?")
                         .AddChoices(Enum.GetValues<MenuChoice>())
                     );
+
+                Console.Clear();
+
                 switch (mainMenuChoice)
                 {
                     case MenuChoice.Play:
