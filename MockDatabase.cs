@@ -43,7 +43,9 @@ namespace MathGameRecap
                 "Id", "Type", "Date", "Score", "Duration(sec)", "Difficulty"
             });
 
-            foreach (var gameData in Database)
+            var yesterday = DateTime.Now - TimeSpan.FromDays(1); 
+
+            foreach (var gameData in Database.Where(game => game.Date >= yesterday))
             {
                 var id = gameData.Id.ToString();
                 var type = gameData.Type.ToString();
