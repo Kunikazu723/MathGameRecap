@@ -17,11 +17,11 @@ namespace MathGameRecap.Models
                     break;
                 case Difficulty.Medium:
                     a = Helpers.Rng.Next(10, 101);
-                    b = Helpers.Rng.Next(1, 10);
+                    b = Helpers.Rng.Next(2, 10);
                     break;
                 case Difficulty.Hard:
-                    a = Helpers.Rng.Next(1, 101);
-                    b = Helpers.Rng.Next(1, 101);
+                    a = Helpers.Rng.Next(2, 101);
+                    b = Helpers.Rng.Next(2, 101);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
