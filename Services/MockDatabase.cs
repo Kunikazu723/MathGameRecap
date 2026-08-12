@@ -1,13 +1,14 @@
-﻿using MathGameRecap.Models;
+﻿using MathGameRecap.Common;
+using MathGameRecap.Models;
 using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static MathGameRecap.Enums;
+using static MathGameRecap.Common.Enums;
 
-namespace MathGameRecap
+namespace MathGameRecap.Services
 {
     internal class MockDatabase
     {

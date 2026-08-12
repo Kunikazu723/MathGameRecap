@@ -1,6 +1,8 @@
-﻿using Spectre.Console;
+﻿using MathGameRecap.Common;
+using MathGameRecap.Services;
+using Spectre.Console;
 using System.Diagnostics;
-using static MathGameRecap.Enums;
+using static MathGameRecap.Common.Enums;
 
 namespace MathGameRecap.Models
 {

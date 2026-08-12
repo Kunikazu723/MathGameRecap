@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static MathGameRecap.Enums;
+using static MathGameRecap.Common.Enums;
 namespace MathGameRecap.Models
 {
     public class GameData

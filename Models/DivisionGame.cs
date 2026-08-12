@@ -1,6 +1,7 @@
-﻿using System.CodeDom.Compiler;
-using static MathGameRecap.Enums;
-using static MathGameRecap.Helpers;
+﻿using MathGameRecap.Common;
+using System.CodeDom.Compiler;
+using static MathGameRecap.Common.Enums;
+using static MathGameRecap.Common.Helpers;
 namespace MathGameRecap.Models
 {
     internal class DivisionGame : BaseGame

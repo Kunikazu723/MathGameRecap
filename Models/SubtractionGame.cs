@@ -1,4 +1,5 @@
-﻿using static MathGameRecap.Enums;
+﻿using MathGameRecap.Common;
+using static MathGameRecap.Common.Enums;
 
 namespace MathGameRecap.Models
 {

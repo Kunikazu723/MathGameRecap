@@ -1,6 +1,6 @@
 ﻿using MathGameRecap.Models;
-using static MathGameRecap.Enums;
-namespace MathGameRecap
+using static MathGameRecap.Common.Enums;
+namespace MathGameRecap.Services
 {
     internal class GameEngine
     {

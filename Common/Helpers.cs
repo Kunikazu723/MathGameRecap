@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MathGameRecap
+namespace MathGameRecap.Common
 {
     internal static class Helpers
     {
