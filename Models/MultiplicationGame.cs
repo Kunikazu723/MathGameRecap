@@ -3,7 +3,7 @@ namespace MathGameRecap.Models
 {
     internal class MultiplicationGame : BaseGame
     {
-        internal override Enums.GameType Type => Enums.GameType.Multiply;
+        internal override GameType Type => GameType.Multiply;
 
         internal override (int, int) GenerateOperands(Difficulty difficulty)
         {

@@ -13,7 +13,7 @@ namespace MathGameRecap.Models
             // Medium - doulbe digit nominator single digit denominator
             // Hard - double digit division
 
-            int futureAnswer = Rng.Next(0, 100);
+            int quotient = Rng.Next(0, 100);
             int denominatorMultiple = Rng.Next(1, 100);
 
             //int a;
@@ -22,21 +22,21 @@ namespace MathGameRecap.Models
             switch (difficulty)
             {
                 case Difficulty.Easy:
-                    futureAnswer = Rng.Next(0, 5);
+                    quotient = Rng.Next(0, 5);
                     denominatorMultiple = Rng.Next(1, 10);
                     break;
                 case Difficulty.Medium:
-                    futureAnswer = Rng.Next(0, 10);
+                    quotient = Rng.Next(0, 10);
                     denominatorMultiple = Rng.Next(1, 10);
                     break;
                 case Difficulty.Hard:
-                    futureAnswer = Rng.Next(1, 50);
+                    quotient = Rng.Next(1, 50);
                     denominatorMultiple = Rng.Next(1, 100);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            int nominator = futureAnswer * denominatorMultiple;
+            int nominator = quotient * denominatorMultiple;
 
             return (nominator, denominatorMultiple);
         }
