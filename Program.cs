@@ -1,8 +1,4 @@
 ﻿using MathGameRecap.Services;
-using System;
-using System.Collections.Generic;
-using System.Numerics;
-using static MathGameRecap.Common.Enums;
 
 namespace MathGameRecap
 {

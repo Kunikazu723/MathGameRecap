@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MathGameRecap.Services;
-using Spectre;
+﻿using MathGameRecap.Services;
 using Spectre.Console;
 using static MathGameRecap.Common.Enums;
 namespace MathGameRecap

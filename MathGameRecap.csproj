@@ -11,8 +11,4 @@
     <PackageReference Include="Spectre.Console" Version="0.57.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
 </Project>
