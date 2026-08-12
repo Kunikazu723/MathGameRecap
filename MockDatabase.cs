@@ -31,6 +31,13 @@ namespace MathGameRecap
 
         public static void ViewGamesHistory()
         {
+            if (Database.Count == 0)
+            {
+                AnsiConsole.MarkupLine("The [bold blue]History[/] of games is [bold red]Empty[/]");
+                Helpers.Intermission();
+                return;
+            }
+
             var table = new Table();
             table.AddColumns(new string[] {
                 "Id", "Type", "Date", "Score", "Duration(sec)", "Difficulty"
