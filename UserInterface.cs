@@ -23,7 +23,7 @@ namespace MathGameRecap
             bool isAppRunning = true;
             do
             {
-                AnsiConsole.MarkupLine("[blue]Welcome[/] to the Math game");
+                AnsiConsole.MarkupLine("[blue]Welcome[/] to the [bold yellow]Math game[/]");
                 var mainMenuChoice = AnsiConsole.Prompt(
                         new SelectionPrompt<MenuChoice>()
                         .Title("What would you like to do?")
