@@ -24,7 +24,7 @@ namespace MathGameRecap.Models
 
             for (int i = 0; i < Rounds; i++)
             {
-                AnsiConsole.MarkupLine(Helpers.RoundHeader("Addition Game", i + 1));
+                AnsiConsole.MarkupLine(Helpers.RoundHeader($"{Type.ToString()} Game", i + 1));
 
                 (int firstNumber, int secondNumber) = GenerateOperands(chosenDifficulty);
 
