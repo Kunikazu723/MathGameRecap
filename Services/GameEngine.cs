@@ -4,8 +4,6 @@ namespace MathGameRecap.Services
 {
     internal class GameEngine
     {
-
-        private readonly Random random = new();
         private readonly Dictionary<GameType, BaseGame> gameRunner = new()
         {
             [GameType.Add] = new AdditionGame(),

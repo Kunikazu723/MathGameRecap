@@ -15,8 +15,6 @@ namespace MathGameRecap.Services
                 throw new ArgumentException();
             }
 
-            var date = DateTime.Now;
-
             Database.Add(game);
 
             LastId = game.Id;
