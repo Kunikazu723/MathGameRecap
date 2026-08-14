@@ -42,26 +42,5 @@ namespace MathGameRecap.Models
         }
 
         internal override int PerformOperation(int a, int b) => a / b;
-
-        private int GenerateDenominator(int a)
-        {
-            if (a == 0)
-            {
-                return 1;
-            }
-
-            var availableDenominators = new List<int>();
-            for (int i = 1; i <= a; i++) 
-            {
-                if (a % i == 0)
-                {
-                    availableDenominators.Add(i);
-                }
-            }
-
-            int randomIndex = Helpers.Rng.Next(availableDenominators.Count);
-
-            return availableDenominators[randomIndex];
-        }
     }
 }
